@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-12">
+         <div class="form-group">             
+            <label for="cantidad">Insert Amount</label>
+             <input type="number" class="form-control form-control-lg" id="cantidad" placeholder="Enter Amount.."
+             [(ngModel)]="amount" (input)="convertir()">
+           </div>
+        </div>
+    </div>    
+    
+    <div class="d-flex justify-content-between align-items-end">
+        <div class="flex-grow-1">
+         <div class="form-group">
+             <label for="tengo">I Have</label>
+             <select class="form-control form-control-lg" id="tengo" 
+             [(ngModel)]="have" (change)="convertir()">
+               <option *ngFor="let currency of data">{{currency[0]}}</option>
+             </select>
+           </div>
+        </div> 
+        <i class="fa-solid fa-arrow-right-arrow-left ms-2 me-2" (click)="switchCurrencies()"></i>       
+        <div class="flex-grow-1">
+         <div class="form-group">
+             <label for="quiero">I need</label>
+             <select class="form-control form-control-lg" id="quiero"
+             [(ngModel)]="need" (change)="convertir()">
+             <option *ngFor="let currency of data">{{currency[0]}}</option>
+             </select>
+           </div>
+        </div>
+    </div>
+    <h5 *ngIf="amount!=0" class="text-center mt-5 d-flex justify-content-center">
+       <span class="badge bg-success">{{amount}} {{have}}</span>
+       <span class="badge bg-secondary">= </span>
+       <span class="badge bg-success">{{total}} {{need}}</span>
+    </h5>
+ </div>

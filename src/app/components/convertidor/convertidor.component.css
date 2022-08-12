@@ -1,0 +1,24 @@
+.badge{
+    margin: 2px;
+    font-size: 120%;
+}
+
+label{    
+    margin: 5px;
+    font-size: 120%;
+    color: #fff;
+    font-weight: 500;
+}
+
+.fa-solid{
+    background-color:rgba(0,0,0,0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 6px;      
+}
+.fa-solid:hover{
+    background-color:#198754;    
+    
+}
